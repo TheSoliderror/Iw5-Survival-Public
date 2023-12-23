@@ -71,3 +71,7 @@ Both Private Match and Server Guides are Below.
   * Soliderror: for the idea of the mod and inspiring other mod creators showing that online survival is possible and making the shit code in the first place.
   * Ball: Just for being here and testing shit...you are still usless in my eyes
   * ZechReaper (yes ik its spelled diffrent): Thanks for all the help when I got stuck on simple ass syntax errors...because GSC
+
+# How to download zip?
+  * I shoulnt have to put this, but ik people. 
+   * at the top of the repo there is a greem *code* icon, click it and press download zip.
