@@ -8,7 +8,7 @@ Both Private Match and Server Guides are Below.
   * Move the *iw5_survival* folder into your mod folder *%localappdata%\Plutonim\storage\iw5\mods* you may have to make the mods folder if you do not have any installed mods
   * Launch the game
     * ON THE MAIN SCREEN!! Press the *~* key to open the consle.
-       * Type in *fs_game iw5_survival*
+       * Type in *fs_game mods/iw5_survival*
           * Press Private Match, and choose one of the following maps
               Supported Maps:
                 Dome
@@ -22,7 +22,7 @@ Both Private Match and Server Guides are Below.
 
 # Playing With Freinds: (Private Match Only)
 * If you wish for freids to join you, have them download the zip, and install the *Cleint* files,
-  * Then have them set their *fs_game* to *iw5_survival* and then they may join you.
+  * Then have them set their *fs_game* to *mods/iw5_survival* and then they may join you.
 
 
 
