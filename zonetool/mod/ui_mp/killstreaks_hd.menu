@@ -1,0 +1,116 @@
+//This shows only bought straks, will edit cords later, use this to also show perks, not added yet
+{	
+	menuDef
+	{
+		name "killstreaks_hd"
+		rect 0 0 640 480 10 10
+		visible 1
+		forecolor 1 1 1 1
+		itemDef
+		{
+			rect -14.6667 -66.6667 13.3333 6.66667 10 10
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "hud_killstreak_bar_empty"
+			textscale 0.55
+			visible when ( ( ( getplayerdata( "killstreaksState" , "countToNext" ) ) > 0 ) && ( ( getplayerdata( "killstreaksState" , "count" ) ) < 1 ) )
+		}
+		itemDef
+		{
+			rect -14.6667 -66.6667 13.3333 6.66667 10 10
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "hud_killstreak_bar_full"
+			textscale 0.55
+			visible when ( ( ( getplayerdata( "killstreaksState" , "count" ) ) > 0 ) && ( ( getplayerdata( "killstreaksState" , "countToNext" ) ) > 0 ) )
+		}
+		itemDef
+		{
+			rect -14.6667 -72 13.3333 6.66667 10 10
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "hud_killstreak_bar_empty"
+			textscale 0.55
+			visible when ( ( ( getplayerdata( "killstreaksState" , "countToNext" ) ) > 1 ) && ( ( getplayerdata( "killstreaksState" , "count" ) ) < 2 ) )
+		}
+		itemDef
+		{
+			rect -14.6667 -72 13.3333 6.66667 10 10
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "hud_killstreak_bar_full"
+			textscale 0.55
+			visible when ( ( ( getplayerdata( "killstreaksState" , "count" ) ) > 1 ) && ( ( getplayerdata( "killstreaksState" , "countToNext" ) ) > 1 ) )
+		}
+		itemDef
+		{
+			rect -14.6667 -77.3333 13.3333 6.66667 10 10
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "hud_killstreak_bar_empty"
+			textscale 0.55
+			visible when ( ( ( getplayerdata( "killstreaksState" , "countToNext" ) ) > 2 ) && ( ( getplayerdata( "killstreaksState" , "count" ) ) < 3 ) )
+		}
+		itemDef
+		{
+			rect -14.6667 -77.3333 13.3333 6.66667 10 10
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "hud_killstreak_bar_full"
+			textscale 0.55
+			visible when ( ( ( getplayerdata( "killstreaksState" , "count" ) ) > 2 ) && ( ( getplayerdata( "killstreaksState" , "countToNext" ) ) > 2 ) )
+		}
+		itemDef
+		{
+			rect -41.3333 -58.6667 17.3333 17.3333 10 10
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( - 49 + ( ( sin( milliseconds( ) / 90 ) ) * 0.65 ) ) + 7 )
+			exp rect y ( ( - 75 + ( ( sin( milliseconds( ) / 90 ) ) * 0.65 ) ) + 18 )
+			exp rect w ( ( 26 + ( ( sin( milliseconds( ) / 90 ) ) * 0.65 ) ) - 10 )
+			exp rect h ( ( 26 + ( ( sin( milliseconds( ) / 90 ) ) * 0.65 ) ) - 10 )
+			visible when ( ( getplayerdata( "killstreaksState" , "hasStreak" , 0 ) ) )
+			exp material ( tablelookup( "mp/killstreakTable.csv" , 0 , ( getplayerdata( "killstreaksState" , "icons" , 0 ) ) , 16 ) )
+		}
+		itemDef
+		{
+			rect -41.3333 -58.6667 17.3333 17.3333 10 10
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "hud_iw5_killstreak_box"
+			textscale 0.55
+			visible when ( ! ( getplayerdata( "killstreaksState" , "hasStreak" , 0 ) ) )
+		}
+		itemDef
+		{
+			rect -26.6667 -57 6.66667 14 10 10
+			decoration
+			visible 1
+			forecolor 1 1 0 1
+			textfont 6
+			textalign 2
+			textalignx -5
+			textaligny 15
+			textscale 0.25
+			visible when ( ( getplayerdata( "killstreaksState" , "hasStreak" , 0 ) ) )
+			exp text ( "^3" + keybinding( "+actionslot 4" ) )
+		}
+	}
+}

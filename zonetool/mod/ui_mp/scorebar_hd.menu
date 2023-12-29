@@ -1,0 +1,20 @@
+//use this for survial hud
+{
+	menuDef
+	{
+		name "scorebar_hd"
+		rect 0 0 640 480 10 10
+		forecolor 1 1 1 1
+		itemDef
+		{
+			rect 13.3333 190.6667 200 21.3333 
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "hud_weaponbar_line"
+			textscale 0.55
+			visible when ( ( team( "name" ) != "TEAM_SPECTATOR" ) )
+		}
+	}
+}

@@ -1,0 +1,622 @@
+#include "ui/menudef.h"
+
+#define ADD_BUTTON_1( column, it_text, id) \
+	itemDef \
+    { \
+        rect                      42 0 300 28 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_SUBTOP \
+        style                     WINDOW_STYLE_FILLED \
+        borderSize                1 \
+        forecolor                 1 1 1 1 \
+        backColor                 0.18 0.196 0.188 1 \
+        borderColor               0 0 0 0 \
+        outlineColor              0 0 0 0 \
+		textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+		type ITEM_TYPE_BUTTON \
+        exp                       rect Y ( 66 + (28 * column)) \
+		exp text( "^7" + it_text ) \
+        onFocus  \
+		{ \
+			setLocalVarInt "ui_current" ( column ); \
+			play mouse_over; \
+		} \
+		mouseEnter  \
+		{ \
+		} \
+		action \
+		{ \
+            scriptMenuResponse id; \
+			play "mouse_click"; \
+		} \
+        visible 1  \
+    } \
+	itemDef \
+    { \
+        rect                      42 0 300 28 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_SUBTOP \
+        style                     WINDOW_STYLE_FILLED \
+        borderSize                1 \
+        forecolor                 0 1 0.4 0.75 \ 
+        backColor                 0.18 0.196 0.188 1 \
+        borderColor               0 0 0 0 \
+        outlineColor              0 0 0 0 \
+        textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+        background                "black" \
+        exp                       rect Y ( 66 + (28 * column)) \
+		exp text( "^7" + it_text ) \
+		visible when ( localvarint("ui_current") == column ) \
+        decoration \
+    } \
+
+	#define ADD_BUTTON_2( column, it_text, id) \
+	itemDef \
+    { \
+        rect                      42 0 300 28 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_SUBTOP \
+        style                     WINDOW_STYLE_FILLED \
+        borderSize                1 \
+        forecolor                 1 1 1 1 \
+        backColor                 0.21 0.23 0.22 1 \
+        borderColor               0 0 0 0 \
+        outlineColor              0 0 0 0 \
+		textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+		type ITEM_TYPE_BUTTON \
+        exp                       rect Y ( 66 + (28 * column)) \
+		exp text( "^7" + it_text ) \
+        onFocus  \
+		{ \
+			setLocalVarInt "ui_current" ( column ); \
+			play mouse_over; \
+		} \
+		mouseEnter  \
+		{ \
+		} \
+		action \
+		{ \
+            scriptMenuResponse id; \
+			play "mouse_click"; \
+		} \
+        visible 1  \
+    } \
+	itemDef \
+    { \
+        rect                      42 0 300 28 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_SUBTOP \
+        style                     WINDOW_STYLE_FILLED \
+        borderSize                1 \
+        forecolor                 0 1 0.4 0.75 \
+        backColor                 0.21 0.23 0.22 1 \
+        borderColor               0 0 0 0 \
+        outlineColor              0 0 0 0 \
+        textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+        background                "black" \
+        exp                       rect Y ( 66 + (28 * column)) \
+		exp text( "^7" + it_text ) \
+		visible when ( localvarint("ui_current") == column ) \
+        decoration \
+    } \
+
+	#define ADD_NEXT_1(column, it_text, itemAction,itemAction_2) \
+	itemDef \
+    { \
+        rect                      42 0 300 28 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_SUBTOP \
+        style                     WINDOW_STYLE_FILLED \
+        borderSize                1 \
+        forecolor                 1 1 1 1 \
+        backColor                 0.18 0.196 0.188 1 \
+        borderColor               0 0 0 0 \
+        outlineColor              0 0 0 0 \
+		textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+		type ITEM_TYPE_BUTTON \
+        exp                       rect Y ( 66 + (28 * column)) \
+		exp text( "^7" + it_text ) \
+        onFocus  \
+		{ \
+			setLocalVarInt "ui_current" ( column ); \
+			play mouse_over; \
+		} \
+		mouseEnter  \
+		{ \
+		} \
+		action \
+		{ \
+            setLocalVarInt "ui_selected" ( index ); \
+            scriptMenuResponse index; \
+			play "mouse_click"; \
+			itemAction;\
+			itemAction_2;\
+		} \
+        visible 1  \
+    } \
+	itemDef \
+    { \
+        rect                      42 0 300 28 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_SUBTOP \
+        style                     WINDOW_STYLE_FILLED \
+        borderSize                1 \
+        forecolor                 0 1 0.4 0.75 \
+        backColor                 0.18 0.196 0.188 1 \
+        borderColor               0 0 0 0 \
+        outlineColor              0 0 0 0 \
+        textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+        background                "black" \
+        exp                       rect Y ( 66 + (28 * column)) \
+		exp text( "^7" + it_text ) \
+		visible when ( localvarint("ui_current") == column ) \
+        decoration \
+    } \
+
+	#define ADD_NEXT_2(column, it_text, itemAction,itemAction_2) \
+	itemDef \
+    { \
+        rect                      42 0 300 28 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_SUBTOP \
+        style                     WINDOW_STYLE_FILLED \
+        borderSize                1 \
+        forecolor                 1 1 1 1 \
+        backColor                 0.21 0.23 0.22 1 \
+        borderColor               0 0 0 0 \
+        outlineColor              0 0 0 0 \
+		textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+		type ITEM_TYPE_BUTTON \
+        exp                       rect Y ( 66 + (28 * column)) \
+		exp text( "^7" + it_text ) \
+        onFocus  \
+		{ \
+			setLocalVarInt "ui_current" ( column ); \
+			play mouse_over; \
+		} \
+		mouseEnter  \
+		{ \
+		} \
+		action \
+		{ \
+            setLocalVarInt "ui_selected" ( index ); \
+            scriptMenuResponse index; \
+			play "mouse_click"; \
+			itemAction;\
+			itemAction_2;\
+		} \
+        visible 1  \
+    } \
+	itemDef \
+    { \
+        rect                      42 0 300 28 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_SUBTOP \
+        style                     WINDOW_STYLE_FILLED \
+        borderSize                1 \
+        forecolor                 0 1 0.4 0.75 \
+        backColor                 0.21 0.23 0.22 1 \
+        borderColor               0 0 0 0 \
+        outlineColor              0 0 0 0 \
+        textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+        background                "black" \
+        exp                       rect Y ( 66 + (28 * column)) \
+		exp text( "^1" + it_text ) \
+		visible when ( localvarint("ui_current") == column ) \
+        decoration \
+    } \
+	
+	#define TOP(name,iwi,dsc) \
+	itemDef \
+    { \
+		rect			0 0 300 66 0 0 \
+		style			1 \
+		backcolor			0.31 0.34 0.27 1 \
+		type			0 \
+        textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+		exp text( name ) \
+		visible 1 \
+        decoration \
+    } \
+	itemdef \
+	{ \
+		rect			0 0 299 18 0 0 \
+		style			1 \
+		backcolor			0.18 0.196 0.18 1  \
+		visible			1 \
+		type			0 \
+		decoration \
+	} \
+	itemdef \
+	{ \
+		rect			0 18 299 2 0 0 \
+		style			1 \
+		backcolor			0 0 0 1 \
+		type			0 \
+		visible			1 \
+		type			0 \
+		decoration \
+	} \
+	
+	#define BOTTEM(column) \
+	itemdef \
+	{ \
+		rect			0 0 300 28 0 0 \
+		style			1 \
+		backcolor		0.26 0.29 0.21 1 \
+		visible			1 \
+		type			0 \
+		exp	rect Y ( 66 + (28 * column)) \
+		textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+		exp text( "" ) \
+		decoration \
+	} \
+
+{
+	menuDef
+	{
+		name			"quickresponses"
+		rect			180 75 310 300 
+		blurworld		4.8
+		//border			1
+		//bordersize		5
+		//bordercolor		0.31 0.349 0.275 1 
+		onOpen
+		{
+			
+		}
+		onClose
+		{
+			
+		}
+		onESC
+		{
+			close self;
+		}
+
+		TOP("Weapons Armory","","";) //these will be dvars
+		ADD_BUTTON_1(0, "^7REFILL BULLET AMMO  $ 750", "ammo";)
+		ADD_NEXT_1(1, "^7HANDGUNS", close self, open "secondarys";)
+		ADD_NEXT_2(2, "^7MACHINE PISTOLS", close self, open "secondarys_2";)
+		ADD_NEXT_1(3, "^7ASSAULT RILES", close self, open "assault_rifles";)
+		ADD_NEXT_2(4, "^7SUB MACHINE GUNS", close self, open "smgs";)
+		ADD_NEXT_1(5, "^7LIGHT MACHINE GUNS", close self, open "lmgs";)
+		ADD_NEXT_2(6, "^7SNIPER RILES", close self, open "snipers";)
+		ADD_NEXT_1(7, "^7SHOTGUNS", close self, open "shotguns";)
+		ADD_NEXT_2(8, "^7ATTACHMENTS ^1X", close self, open "attachments_p";)
+		ADD_BUTTON_2(9, "", "";)
+		BOTTEM(10)
+
+	
+
+	}
+	
+	menuDef
+	{
+		name			"secondarys"
+		rect			180 75 310 300 
+		blurworld			4.8
+		//border			1
+		//bordersize			5
+		//bordercolor			0.31 0.349 0.275 1 
+		onOpen
+		{
+			
+		}
+		onClose
+		{
+			
+		}
+		onESC
+		{
+			close self;
+			open "quickresponses";
+		}
+
+		TOP("","","";)
+		ADD_BUTTON_1(0, "^7FIVE SEVEN                 $ 250", "iw5_fnfiveseven_mp";) //cash needs to be edited to be a client dvar,so it can change when bought
+		ADD_BUTTON_2(1, "^7USP .45                    $ 250", "iw5_usp45_mp";)
+		ADD_BUTTON_1(2, "^7MP412                      $ 250", "iw5_mp412_mp";)
+		ADD_BUTTON_2(3, "^7DESERT EAGLE               $ 250", "iw5_deserteagle_mp";)
+		ADD_BUTTON_1(4, "^7.44 MEGNUM                 $ 250", "iw5_44magnum_mp";)
+		ADD_BUTTON_2(5, "^7P99                        $ 250", "iw5_p99_mp";)
+		ADD_BUTTON_1(6, "", "";)
+		ADD_BUTTON_2(7, "", "";)
+		ADD_BUTTON_1(8, "", "";)
+		ADD_BUTTON_2(9, "", "";)
+		BOTTEM(10)
+
+
+	}
+}
+
+	menuDef
+	{
+		name			"assault_rifles"
+		rect			180 75 310 300 
+		blurworld			4.8
+		//border			1
+		//bordersize			5
+		//bordercolor			0.31 0.349 0.275 1 
+		onOpen
+		{
+			
+		}
+		onClose
+		{
+			
+		}
+		onESC
+		{
+			close self;
+			open "quickresponses";
+		}
+
+		TOP("","","";)
+		ADD_BUTTON_1(0, "^7M4A1                  $ 100", "iw5_m4_mp";)
+		ADD_BUTTON_2(1, "^7M16A4                 $ 100", "iw5_m16_mp";)
+		ADD_BUTTON_1(2, "^7SCAR-L                $ 100", "iw5_scar_mp";)
+		ADD_BUTTON_2(3, "^7ACR 6.8               $ 100", "iw5_acr_mp";)
+		ADD_BUTTON_1(4, "^7AK-47                 $ 100", "iw5_ak47_mp";)
+		ADD_BUTTON_2(5, "^7FAD                   $ 100", "iw5_fad_mp";)
+		ADD_BUTTON_1(6, "^7G36C                  $ 100", "iw5_g36c_mp";)
+		ADD_BUTTON_2(7, "^7CM901                 $ 100", "iw5_cm901_mp";)
+		ADD_BUTTON_1(8, "^7MK14 ^1X              $ 100", "iw5_mk14_mp";)
+		ADD_BUTTON_2(9, "^7Type 95 ^1X           $ 100", "iw5_type95_mp";)
+		BOTTEM(10)
+
+
+	}
+	
+	menuDef
+	{
+		name			"smgs"
+		rect			180 75 310 300 
+		blurworld			4.8
+		//border			1
+		//bordersize			5
+		//bordercolor			0.31 0.349 0.275 1 
+		onOpen
+		{
+			
+		}
+		onClose
+		{
+			
+		}
+		onESC
+		{
+			close self;
+			open "quickresponses";
+		}
+
+		TOP("","","";)
+		ADD_BUTTON_1(0, "^7MP5                   $ 100","iw5_mp5_mp";)
+		ADD_BUTTON_2(1, "^7UMP45                 $ 100","iw5_ump45_mp";)
+		ADD_BUTTON_1(2, "^7MP7                   $ 100","iw5_mp7_mp";)
+		ADD_BUTTON_2(3, "^7PM-9                  $ 100","iw5_m9_mp";)
+		ADD_BUTTON_1(4, "^7PP90M1                $ 100","iw5_pp90m1_mp";)
+		ADD_BUTTON_2(5, "^7P90                   $ 100", "iw5_p90_mp";)
+		ADD_BUTTON_1(6, "", "";)
+		ADD_BUTTON_2(7, "", "";)
+		ADD_BUTTON_1(8, "", "";)
+		ADD_BUTTON_2(9, "", "";)
+		BOTTEM(10)
+	}
+	
+	menuDef
+	{
+		name			"lmgs"
+		rect			180 75 310 300 
+		blurworld			4.8
+		//border			1
+		//bordersize			5
+		//bordercolor			0.31 0.349 0.275 1 
+		onOpen
+		{
+		
+		}
+		onClose
+		{
+			
+		}
+		onESC
+		{
+			close self;
+			open "quickresponses";
+		}
+
+		TOP("","","";)
+		ADD_BUTTON_1(0, "^7M60E4                $ 100","iw5_m60_mp";)
+		ADD_BUTTON_2(1, "^7PKP PECHENEG         $ 100","iw5_pecheneg_mp";)
+		ADD_BUTTON_1(2, "^7MK46                 $ 100","iw5_mk46_mp";)
+		ADD_BUTTON_2(3, "^7L86 LSW              $ 100","iw5_sa80_mp";)
+		ADD_BUTTON_1(4, "^7MG36                 $ 100","iw5_mg36_mp";)
+		ADD_BUTTON_2(5, "^7AUG                  $ 100","iw5_m60jugg_mp_camo08";)
+		ADD_BUTTON_1(6, "", "";)
+		ADD_BUTTON_2(7, "", "";)
+		ADD_BUTTON_1(8, "", "";)
+		ADD_BUTTON_2(9, "", "";)
+		BOTTEM(10)
+	}
+	
+	menuDef
+	{
+		name			"snipers"
+		rect			180 75 310 300 
+		blurworld			4.8
+		//border			1
+		//bordersize			5
+		//bordercolor			0.31 0.349 0.275 1 
+		onOpen
+		{
+			
+		}
+		onClose
+		{
+			
+		}
+		onESC
+		{
+			close self;
+			open "quickresponses";
+		}
+
+		TOP("","","";)
+		ADD_BUTTON_1(0, "^7MSR                   $ 100","iw5_msr_mp_msrscope";)
+		ADD_BUTTON_2(1, "^7Dragounov             $ 100","iw5_dragunov_mp_dragunovscope";)
+		ADD_BUTTON_1(2, "^7RSASS                 $ 100","iw5_rsass_mp_rsassscope";)
+		ADD_BUTTON_2(3, "^7L118A                 $ 100","iw5_l96a1_mp_l96a1scope";)
+		ADD_BUTTON_1(4, "^7AS50                  $ 100","iw5_as50_mp_as50scope";)
+		ADD_BUTTON_2(5, "^7BARRETT .50CAL        $ 100","iw5_barrett_mp_barrettscope";)
+		ADD_BUTTON_1(6, "", "";)
+		ADD_BUTTON_2(7, "", "";)
+		ADD_BUTTON_1(8, "", "";)
+		ADD_BUTTON_2(9, "", "";)
+		BOTTEM(10)
+	}
+	
+	menuDef
+	{
+		name			"shotguns"
+		rect			180 75 310 300 
+		blurworld			4.8
+		//border			1
+		//bordersize			5
+		//bordercolor			0.31 0.349 0.275 1 
+		onOpen
+		{
+			
+		}
+		onClose
+		{
+			
+		}
+		onESC
+		{
+			close self;
+			open "quickresponses";
+		}
+
+		TOP("","","";)
+		ADD_BUTTON_1(0, "^7MODEL 1887            $ 100", "iw5_1887_mp";)
+		ADD_BUTTON_2(1, "^7USAS 12               $ 100", "iw5_usas12_mp";)
+		ADD_BUTTON_1(2, "^7SPAS-12               $ 100", "iw5_spas12_mp";)
+		ADD_BUTTON_2(3, "^7KSG 12                $ 100", "iw5_ksg_mp";)
+		ADD_BUTTON_1(4, "^7STRIKER               $ 100", "iw5_striker_mp";)
+		ADD_BUTTON_2(5, "^7AA-12                 $ 100", "iw5_aa12_mp";)
+		ADD_BUTTON_1(6, "", "";)
+		ADD_BUTTON_2(7, "", "";)
+		ADD_BUTTON_1(8, "", "";)
+		ADD_BUTTON_2(9, "", "";)
+		BOTTEM(10)
+	}
+	
+	menuDef
+	{
+		name			"secondarys_2"
+		rect			180 75 310 300 
+		blurworld			4.8
+		//border			1
+		//bordersize			5
+		//bordercolor			0.31 0.349 0.275 1 
+		onOpen
+		{
+			
+		}
+		onClose
+		{
+			
+		}
+		onESC
+		{
+			close self;
+			open "quickresponses";
+		}
+
+		TOP("","","";)
+		ADD_BUTTON_1(0, "^7G18                   $ 100", "iw5_g18_mp";)
+		ADD_BUTTON_2(1, "^7SKORPION              $ 100", "iw5_skorpion_mp";)
+		ADD_BUTTON_1(2, "^7MP9                   $ 100", "iw5_mp9_mp";)
+		ADD_BUTTON_2(3, "^7FMG9                  $ 100", "iw5_fmg9_mp";)
+		ADD_BUTTON_1(4, "", "";)
+		ADD_BUTTON_2(5, "", "";)
+		ADD_BUTTON_1(6, "", "";)
+		ADD_BUTTON_2(7, "", "";)
+		ADD_BUTTON_1(8, "", "";)
+		ADD_BUTTON_2(9, "", "";)
+		BOTTEM(10)
+	}
+	
+	menuDef
+	{
+		name			"attachments_p"
+		rect			180 75 310 300 
+		blurworld			4.8
+		//border			1
+		//bordersize			5
+		//bordercolor			0.31 0.349 0.275 1 
+		onOpen
+		{
+			
+		}
+		onClose
+		{
+			
+		}
+		onESC
+		{
+			close self;
+			open "quickresponses";
+		}
+
+
+		TOP("","","";)
+		ADD_BUTTON_1(0, "^7Acog                  $ 100","acog")
+		ADD_BUTTON_2(1, "^7Heartbeat Sensor      $ 100","heartbeat")
+		ADD_BUTTON_1(2, "^7Thermal               $ 100","thermal")
+		ADD_BUTTON_2(3, "", "";)
+		ADD_BUTTON_1(4, "", "";)
+		ADD_BUTTON_2(5, "", "";)
+		ADD_BUTTON_1(6, "", "";)
+		ADD_BUTTON_2(7, "", "";)
+		ADD_BUTTON_1(8, "", "";)
+		ADD_BUTTON_2(9, "", "";)
+		BOTTEM(10)
+	}
+
+}

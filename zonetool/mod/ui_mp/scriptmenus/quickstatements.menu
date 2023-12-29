@@ -1,0 +1,329 @@
+#include "ui/menudef.h"
+
+#define ADD_BUTTON_1( column, it_text, id) \
+	itemDef \
+    { \
+        rect                      42 0 300 28 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_SUBTOP \
+        style                     WINDOW_STYLE_FILLED \
+        borderSize                1 \
+        forecolor                 1 1 1 1 \
+        backColor                 0.18 0.196 0.188 1 \
+        borderColor               0 0 0 0 \
+        outlineColor              0 0 0 0 \
+		textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+		type ITEM_TYPE_BUTTON \
+        exp                       rect Y ( 66 + (28 * column)) \
+		exp text( "^7" + it_text ) \
+        onFocus  \
+		{ \
+			setLocalVarInt "ui_current" ( column ); \
+			play mouse_over; \
+		} \
+		mouseEnter  \
+		{ \
+		} \
+		action \
+		{ \
+            scriptMenuResponse id; \
+			play "mouse_click"; \
+		} \
+        visible 1  \
+    } \
+	itemDef \
+    { \
+        rect                      42 0 300 28 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_SUBTOP \
+        style                     WINDOW_STYLE_FILLED \
+        borderSize                1 \
+        forecolor                 0 1 0.4 0.75 \
+        backColor                 0.18 0.196 0.188 1 \
+        borderColor               0 0 0 0 \
+        outlineColor              0 0 0 0 \
+        textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+        background                "green" \
+        exp                       rect Y ( 66 + (28 * column)) \
+		exp text( "^7" + it_text ) \
+		visible when ( localvarint("ui_current") == column ) \
+        decoration \
+    } \
+
+	#define ADD_BUTTON_2( column, it_text, id) \
+	itemDef \
+    { \
+        rect                      42 0 300 28 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_SUBTOP \
+        style                     WINDOW_STYLE_FILLED \
+        borderSize                1 \
+        forecolor                 1 1 1 1 \
+        backColor                 0.21 0.23 0.22 1 \
+        borderColor               0 0 0 0 \
+        outlineColor              0 0 0 0 \
+		textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+		type ITEM_TYPE_BUTTON \
+        exp                       rect Y ( 66 + (28 * column)) \
+		exp text( "^7" + it_text ) \
+        onFocus  \
+		{ \
+			setLocalVarInt "ui_current" ( column ); \
+			play mouse_over; \
+		} \
+		mouseEnter  \
+		{ \
+		} \
+		action \
+		{ \
+            scriptMenuResponse id; \
+			play "mouse_click"; \
+		} \
+        visible 1  \
+    } \
+	itemDef \
+    { \
+        rect                      42 0 300 28 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_SUBTOP \
+        style                     WINDOW_STYLE_FILLED \
+        borderSize                1 \
+        forecolor                 0 1 0.4 0.75 \
+        backColor                 0.21 0.23 0.22 1 \
+        borderColor               0 0 0 0 \
+        outlineColor              0 0 0 0 \
+        textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+        background                "green" \
+        exp                       rect Y ( 66 + (28 * column)) \
+		exp text( "^7" + it_text ) \
+		visible when ( localvarint("ui_current") == column ) \
+        decoration \
+    } \
+
+	#define ADD_NEXT_1(column, it_text, itemAction,itemAction_2) \
+	itemDef \
+    { \
+        rect                      42 0 300 28 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_SUBTOP \
+        style                     WINDOW_STYLE_FILLED \
+        borderSize                1 \
+        forecolor                 1 1 1 1 \
+        backColor                 0.18 0.196 0.188 1 \
+        borderColor               0 0 0 0 \
+        outlineColor              0 0 0 0 \
+		textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+		type ITEM_TYPE_BUTTON \
+        exp                       rect Y ( 66 + (28 * column)) \
+		exp text( "^7" + it_text ) \
+        onFocus  \
+		{ \
+			setLocalVarInt "ui_current" ( column ); \
+			play mouse_over; \
+		} \
+		mouseEnter  \
+		{ \
+		} \
+		action \
+		{ \
+            setLocalVarInt "ui_selected" ( index ); \
+            scriptMenuResponse index; \
+			play "mouse_click"; \
+			itemAction;\
+			itemAction_2;\
+		} \
+        visible 1  \
+    } \
+	itemDef \
+    { \
+        rect                      42 0 300 28 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_SUBTOP \
+        style                     WINDOW_STYLE_FILLED \
+        borderSize                1 \
+        forecolor                 0 1 0.4 0.75 \
+        backColor                 0.18 0.196 0.188 1 \
+        borderColor               0 0 0 0 \
+        outlineColor              0 0 0 0 \
+        textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+        background                "green" \
+        exp                       rect Y ( 66 + (28 * column)) \
+		exp text( "^7" + it_text ) \
+		visible when ( localvarint("ui_current") == column ) \
+        decoration \
+    } \
+
+	#define ADD_NEXT_2(column, it_text, itemAction,itemAction_2) \
+	itemDef \
+    { \
+        rect                      42 0 300 28 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_SUBTOP \
+        style                     WINDOW_STYLE_FILLED \
+        borderSize                1 \
+        forecolor                 1 1 1 1 \
+        backColor                 0.21 0.23 0.22 1 \
+        borderColor               0 0 0 0 \
+        outlineColor              0 0 0 0 \
+		textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+		type ITEM_TYPE_BUTTON \
+        exp                       rect Y ( 66 + (28 * column)) \
+		exp text( "^7" + it_text ) \
+        onFocus  \
+		{ \
+			setLocalVarInt "ui_current" ( column ); \
+			play mouse_over; \
+		} \
+		mouseEnter  \
+		{ \
+		} \
+		action \
+		{ \
+            setLocalVarInt "ui_selected" ( index ); \
+            scriptMenuResponse index; \
+			play "mouse_click"; \
+			itemAction;\
+			itemAction_2;\
+		} \
+        visible 1  \
+    } \
+	itemDef \
+    { \
+        rect                      42 0 300 28 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_SUBTOP \
+        style                     WINDOW_STYLE_FILLED \
+        borderSize                1 \
+        forecolor                 0 1 0.4 0.75 \
+        backColor                 0.21 0.23 0.22 1 \
+        borderColor               0 0 0 0 \
+        outlineColor              0 0 0 0 \
+        textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+        background                "green" \
+        exp                       rect Y ( 66 + (28 * column)) \
+		exp text( "^1" + it_text ) \
+		visible when ( localvarint("ui_current") == column ) \
+        decoration \
+    } \
+	
+	#define TOP(name,iwi,dsc) \
+	itemDef \
+    { \
+		rect			0 0 300 66 0 0 \
+		style			1 \
+		backcolor			0.31 0.34 0.27 1 \
+		type			0 \
+        textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+		exp text( name ) \
+		visible 1 \
+        decoration \
+    } \
+	itemdef \
+	{ \
+		rect			0 0 299 18 0 0 \
+		style			1 \
+		backcolor			0.18 0.196 0.18 1  \
+		visible			1 \
+		type			0 \
+		decoration \
+	} \
+	itemdef \
+	{ \
+		rect			0 18 299 2 0 0 \
+		style			1 \
+		backcolor			0 0 0 1 \
+		type			0 \
+		visible			1 \
+		type			0 \
+		decoration \
+	} \
+	
+	#define BOTTEM(column) \
+	itemdef \
+	{ \
+		rect			0 0 300 28 0 0 \
+		style			1 \
+		backcolor		0.26 0.29 0.21 1 \
+		visible			1 \
+		type			0 \
+		exp	rect Y ( 66 + (28 * column)) \
+		textfont 9 \
+		textalign 0 \
+		textalignx	8 \
+		textaligny	25 \
+		textstyle 0 \
+		textscale 0.34 \
+		exp text( "" ) \
+		decoration \
+	} \
+
+{
+	menuDef
+	{
+		name			"quickstatements"
+		rect			180 75 310 300 
+		blurworld		4.8
+		//border			1
+		//bordersize		5
+		//bordercolor		0.31 0.349 0.275 1 
+		onOpen
+		{
+			
+		}
+		onClose
+		{
+			
+		}
+		onESC
+		{
+			close self;
+		}
+
+		TOP("Equipment Amory","","";)
+		ADD_BUTTON_1(0, "^7FRAG GRENADE REFILL       ^7$ 50", "frag_buy")
+		ADD_BUTTON_2(1, "^7FLASHBANG REFILL ^1X        ^7$ 50", "flash_buy")
+		ADD_BUTTON_1(2, "^7CLAYMORE X5 (10 MAX)^1X     ^7$ 50", "claymore_buy")
+		ADD_BUTTON_2(3, "^7C4 X5 (10 MAX)^1X          ^7$ 50", "")
+		ADD_BUTTON_1(4, "^7RPG-7 X2 (4 MAX)^1X         ^7$ 50", "")
+		ADD_BUTTON_2(5, "^7BODY ARMOR                $ 50", "vest_buy")
+		ADD_BUTTON_1(6, "^7SELF REVIVE ^1X             ^7$ 50", "revive_buy")
+		ADD_BUTTON_2(7, "^7RIOT SHIELD               $ 50", "riot_buy";)
+		ADD_BUTTON_1(8, "^7SENTRY GUN ^1X               ^7$ 50", "sentry_buy";)
+		ADD_BUTTON_2(9, "^7SENTRY GRENADE LAURNCHER^1X $ 50", "";)
+		BOTTEM(10)
+
+	
+
+	}
+}
+}
+

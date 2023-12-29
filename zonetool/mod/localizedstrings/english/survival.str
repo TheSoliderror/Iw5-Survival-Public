@@ -1,0 +1,11 @@
+REFERENCE           CREDITS
+LANG_ENGLISH        "Developed by Soliderror"
+REFERENCE           TEST_ARM
+LANG_ENGLISH        "Press F to open armory."
+REFERENCE           VERSION
+LANG_ENGLISH        "Version 1.0.0"
+REFERENCE           TEST
+LANG_ENGLISH        "Test"
+REFERENCE           WEAPON_ARM
+LANG_ENGLISH        "Weapons"
+

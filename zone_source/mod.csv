@@ -1,0 +1,29 @@
+# MENUFILES
+menufile,ui_mp/scriptmenus/quickresponses.menu
+menufile,ui_mp/scriptmenus/quickstatements.menu
+menufile,ui_mp/scriptmenus/quickcommands.menu
+menufile,ui_mp/scorebar_hd.menu
+menufile,ui_mp/killstreaks_hd.menu
+menufile,ui_mp/playercard_killedby_hd.menu
+menufile,ui_mp/playercard_youkilled_hd.menu
+
+# LOCALIZEDSTRINGS
+localize,english/survival
+localize,SO_SURVIVAL_ARMORY_USE_AIRSUPPORT
+localize,SO_SURVIVAL_ARMORY_USE_EQUIPMENT
+localize,SO_SURVIVAL_ARMORY_USE_WEAPON
+
+# IMAGES
+material,hud_icon_weapons
+material,hud_icon_support
+material,hud_icon_equipment
+material,hud_weaponbar_line
+material,hud_icon_self_revive
+material,gradient
+material,specialty_armor
+
+# XMODLES TO MANY TECHSETS BRO
+#xmodel,mp_body_delta_elite_smg_b
+#xmodel,viewhands_delta
+#xmodel,com_laptop_close
+#xmodel,com_laptop_open
