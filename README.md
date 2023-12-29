@@ -74,3 +74,6 @@ Both Private Match and Server Guides are Below.
 
 # How to download zip?
  * On the right hand side there is a "release" button, click that and when redirected, download the zip.
+
+# Permissions
+ You do not have premission to edit the parts of the code where dev's are noted. You cannot take credit for my mod!
