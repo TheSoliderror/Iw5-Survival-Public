@@ -73,5 +73,4 @@ Both Private Match and Server Guides are Below.
   * ZechReaper (yes ik its spelled diffrent): Thanks for all the help when I got stuck on simple ass syntax errors...because GSC
 
 # How to download zip?
-  * I shoulnt have to put this, but ik people. 
-   * at the top of the repo there is a greem *code* icon, click it and press download zip.
+ * On the right hand side there is a "release" button, click that and when redirected, download the zip.
